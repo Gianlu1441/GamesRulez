@@ -120,7 +120,7 @@ int i=0;%>
 					ETà MINIMA
 				</td>
 				<td>
-					DURATA MEDIA
+					DURATA MEDIA (Minuti)
 				</td>
 				<td>
 					LINK AMAZON
@@ -157,8 +157,8 @@ int i=0;%>
 				<% if (!(((Utente) request.getAttribute("user")).isAdmin())){ %>
 					<%=""%>
 				<%}else{ %>
-				<a href="/giochi/modificagioco?id=<%= m.get("id") %>">
-				<button class='bottoneAddGame' value='bottoneAddGame' onclick='document.getElementById("overlayModifica<%=i%>").style.display = "block";'>Modifica</button></a>
+				<button class='bottoneAddGame' value='bottoneAddGame' onclick='document.getElementById("overlayModifica<%=i%>").style.display = "block";'>
+				Modifica</button>
 				<%} %>
 				</td>
 				<td>
@@ -170,6 +170,7 @@ int i=0;%>
 				<%} %>
 				</td>
 			</tr>
+			<td>
 			<div class="container-fluid" id="overlayModifica<%=i%>" 
 				style="display: none;
 				position: absolute;
@@ -190,17 +191,22 @@ int i=0;%>
 				<img  src="/res/crocetta.png" width="20%"> </a></div>
 				<h2 class="active">Modifica</h2>
 				<!-- Login Form -->
-				<form action="/giochi/modificagioco?id=<%= m.get("id") %>" method="get">
+				<form action="/giochi/modificagioco" method="get">
+				
+					<input type="text" name="id" value="<%= m.get("id") %>" readonly>
 					<input type="text" id="titolo<%=i%>" class="fadeIn second" name="titolo"
 						value="<%= m.get("titolo")%>" required>
 						<br> 
+						<input type="text" id="etaminima<%=i%>" class="fadeIn second" name="categoria"
+						value="<%= m.get("categoria")%>" required>					
+						<br>
 					<input type="text" id="descrizione<%=i%>" class="fadeIn second" name="descrizione"
 						value="<%= m.get("descrizione")%>" required>					
 						<br>
 					<input type="text" id="regole<%=i%>" class="fadeIn second" name="regole"
 						value="<%= m.get("regole")%>" required>					
 						<br>
-					<input type="text" id="mingiocatori<%=i%>" class="fadeIn second" name="mingiocatori"
+					<input type="text" id="categoria<%=i%>" class="fadeIn second" name="mingiocatori"
 						value="<%= m.get("mingiocatori")%>" required>					
 						<br>
 					<input type="text" id="maxgiocatori<%=i%>" class="fadeIn second" name="maxgiocatori"
@@ -208,12 +214,15 @@ int i=0;%>
 						<br>
 					<input type="text" id="etaminima<%=i%>" class="fadeIn second" name="etaminima"
 						value="<%= m.get("etaminima")%>" required>					
-						<br>
+						<br>						
 					<input type="text" id="linkamazon<%=i%>" class="fadeIn second" name="linkamazon"
 						value="<%= m.get("linkamazon")%>" required>					
 						<br>
+					<input type="text" id="duratamedia<%=i%>" class="fadeIn second" name="duratamedia"
+						value="<%= m.get("duratamedia")%>" required>					
+						<br>
 						<img src="<%= m.get("immagini")%>" height="100px">
-					<input type="text" id="immagini<%=i%>" class="fadeIn second" name="immagine"
+					<input type="text" id="immagini<%=i%>" class="fadeIn second" name="immagini"
 						value="<%= m.get("immagini")%>" required>	  										
 						<br>
 					<input type="submit" class="fadeIn fourth" value="CONFERMA MODIFICA">
@@ -222,21 +231,14 @@ int i=0;%>
 			</div>
 		</div>
 	</div>
+	</td>
 	<%i++;} %>		
 		</table>
 	
 	
 <!-- Footer -->
 	<footer class="text-center text-lg-start bg-white text-muted">
-		<!-- Section: Social media -->
-		
-		<!-- Section: Social media -->
 
-		<!-- Section: Links  -->
-		
-		<!-- Section: Links  -->
-
-		<!-- Copyright -->
 		<div class="text-center p-4"
 			style="background-color: rgba(0, 0, 0, 0.025);">
 			© 2021 Copyright: <a class="text-reset fw-bold"

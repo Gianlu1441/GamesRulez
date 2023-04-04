@@ -41,13 +41,14 @@ public class DAOGames {
 	
 	public boolean update(Map<String,String> m)
 	{
-		String query = "update giochi set titolo = ?, descrizione = ?, regole = ? minGiocatori = ?,"
-					  +"etaMinima = ?, durataMedia = ?,linkAmazon = ?, maxGiocatori = ?, immagini = ?, where id = ?";
+		String query = "update giochi set titolo = ?, descrizione = ?, regole = ?, mingiocatori = ?,"
+					  +"etaminima = ?, duratamedia = ?,linkamazon = ?, maxgiocatori = ?, immagini = ?, categoria = ? where id = ?";
 		return db.update(query, m.get("titolo"),
 								m.get("descrizione"), m.get("regole"), 
-								m.get("minGiocatori"), m.get("etaMinima"), 
-								m.get("durataMedia"), m.get("linkAmazon"),
-								m.get("maxGiocatori"), m.get("immagini"),
+								m.get("mingiocatori"), m.get("etaminima"), 
+								m.get("duratamedia"), m.get("linkamazon"),
+								m.get("maxgiocatori"), m.get("immagini"),
+								m.get("categoria"),
 								m.get("id"));
 		}
 	

@@ -228,18 +228,14 @@ public class GiochiController {
 		
 		System.out.println(nuovidati);
 		
-		if(dg.update(nuovidati))
+		if(dg.update(nuovidati)) {
 			System.out.println("Aggiornato");
-		else
-			System.out.print("Non riuscito");
-		
-		return "redirect:giochi/elenco";
+		return "redirect:/utenti/profilo/#";
+		}else {
+			System.out.print("Non riuscito");		
+			return "/errorehtml.html";
+		}
 	}
-	
-	
-
-
-
 }
 	
 	
