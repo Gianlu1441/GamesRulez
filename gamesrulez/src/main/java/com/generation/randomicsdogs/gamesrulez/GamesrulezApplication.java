@@ -10,6 +10,6 @@ public class GamesrulezApplication {
 		SpringApplication.run(GamesrulezApplication.class, args);
 	}
 
-System.out.println("Questa è una prova");
+
 
 }
