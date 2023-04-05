@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import dao.Database;
 
 public class DAOListGames {
-
+//collegato con il bean in context
 	@Autowired
 	public Database db;
 	
