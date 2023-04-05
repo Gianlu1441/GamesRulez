@@ -31,13 +31,6 @@ public class DAOListGames {
 		return db.update(query, m.get("utenti_id"), m.get("giochi_id"));
 	}
 	
-	public boolean create2(Map<String, String> m) {
-		
-		String query = "insert into listgame (utenti_id, giochi_id) values (?,?)";
-		
-		return db.update(query, m.get("utenti_id"), m.get("giochi_id"));
-	}
-	
 public boolean create(String utenteId, String giocoId) {
 		
 		String query = "insert into listgame (utenti_id, giochi_id) values (?,?)";
