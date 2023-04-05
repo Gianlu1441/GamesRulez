@@ -78,7 +78,7 @@ public class GiochiController {
         model.addAttribute("user",(Utente) session.getAttribute("user"));
         if(model.getAttribute("user") == null)
         {
-            System.out.println("cavoletti ");
+            System.out.println("sono nel posto giusto");
             System.out.println(valoriRicerca);
             return "/utenti/elencoVisitatore.jsp";
         }
